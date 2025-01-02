@@ -1,6 +1,10 @@
 import { Inter } from "next/font/google";
 import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import LeftSidebar from "@components/layout/LeftSidebar";
+import MainContainer from "@components/layout/MainContainer";
+import RightSidebar from "@components/layout/RightSidebar";
+import Topbar from "@components/layout/Topbar";
 
 const inter=Inter({subsets:["latin"]})
 export const metadata = {
@@ -13,7 +17,14 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
     <html lang="en">
       <body className={`${inter.className}`}>
-        {children}
+        <main className="flex flex-row">
+          <LeftSidebar/>
+          <MainContainer>
+            <Topbar/>
+            {children}
+          </MainContainer>
+          <RightSidebar/>
+        </main>
       </body>
     </html>
     </ClerkProvider>
