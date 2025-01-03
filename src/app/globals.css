@@ -25,3 +25,14 @@
     border-radius: 2px;
   }
 }
+
+/* topbar  */
+.search-bar{
+  @apply w-full bg-dark-1 px-5 py-3 rounded-lg focus:outline-none text-light-1 text-small-semibold
+}
+.search-icon{
+  @apply absolute top-3 right-2 text-light-1 hover:text-pink-1 cursor-pointer
+}
+.create-post-btn{
+  @apply flex items-center gap-2 rounded-lg bg-gradient-to-l to-pink-1 from-purple-1 py-2.5 px-3 text-light-1 text-small-semibold max-md:hidden
+}
