@@ -6,3 +6,12 @@ export const sidebarLinks=[
     {icon:<GroupOutlined sx={{color:'white',fontSize:'26px'}}/>,label:'People',route:"/people"},
     {icon:<ManageAccountsOutlined sx={{color:'white',fontSize:'26px'}}/>,label:'Edit Profile',route:"/edit-profile"}
 ]
+export const pageTitles=[
+    {url:'/',title:'Feed'},
+    {url:'/edit-profile',title:'Edit Profile'},
+    {url:'/create-post',title:'Create Post'},
+    {url:'/edit-post',title:'Edit Post'},
+    {url:'/search',title:'Search'},
+    {url:'/saved-posts',title:'Saved Posts'},
+    {url:'/liked-posts',title:'Liked Posts'}
+]
