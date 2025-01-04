@@ -17,6 +17,7 @@ const LeftSidebar = () => {
     const res=await fetch(`/api/user/${user?.id}`)
     const data=await res.json()
     setUserData(data)
+    setLoading(false)
   }
   useEffect(()=>{getUser();return ()=>{};},[user])
   console.log(userData)
