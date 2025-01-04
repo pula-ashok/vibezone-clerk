@@ -4,6 +4,7 @@ import React from 'react'
 import Menu from './Menu'
 import { SignedIn, SignOutButton, UserButton } from '@clerk/nextjs'
 import { Logout } from '@mui/icons-material'
+import { dark } from '@clerk/themes'
 
 const LeftSidebar = () => {
   return (
@@ -33,7 +34,7 @@ const LeftSidebar = () => {
       <Menu/>
       <hr/>
       <div className='flex gap-4 items-center'>
-        <UserButton afterSignOutUrl="/"/>
+        <UserButton afterSignOutUrl="/" appearance={{baseTheme:dark}}/>
         <p className='text-light-1 text-body-bold'>Manage Account</p>
       </div>
       <SignedIn>
