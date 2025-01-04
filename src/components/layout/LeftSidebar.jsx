@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Menu from './Menu'
 import { SignedIn, SignOutButton, UserButton, useUser } from '@clerk/nextjs'
 import { Logout } from '@mui/icons-material'
@@ -10,7 +10,16 @@ import Loader from './Loader'
 
 const LeftSidebar = () => {
   const {isLoaded,user}=useUser()
-  const [loading, setLoading] = useState(false)
+  const [userData, setUserData] = useState({})
+  console.log(user)
+  const [loading, setLoading] = useState(true)
+  const getUser=async()=>{
+    const res=await fetch(`/api/user/${user?.id}`)
+    const data=await res.json()
+    setUserData(data)
+  }
+  useEffect(()=>{getUser();return ()=>{};},[user])
+  console.log(userData)
   return loading?<Loader/> :(
     <div className='flex flex-col gap-6 overflow-auto h-screen  left-0 top-0 sticky px-10 py-6 max-md:hidden custom-scrollbar'>
       <Link href={"/"}><Image src={'/assets/logo.png'} alt='logo' width={200} height={200}/></Link>
