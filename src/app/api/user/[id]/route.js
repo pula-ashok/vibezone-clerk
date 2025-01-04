@@ -1,11 +1,13 @@
 import User from "@lib/models/User"
+import { connectDB } from "@lib/mongodb/mongoose"
 
-export async function GET(req,{params}){
+export const GET = async (req, { params }) => {
     try {
+        await connectDB();
         const clerkId=await params?.id
         // const clerkId=React.use(params)
+        // const user=await User.findOne({clerkId:clerkId}).populate('posts savedPosts likedPosts followers following').exec()
         const user=await User.findOne({clerkId:clerkId})
-        console.log(user,"testing")
         return new Response(JSON.stringify(user),{status:200})
     } catch (error) {
         console.log(error)

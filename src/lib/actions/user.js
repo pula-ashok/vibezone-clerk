@@ -22,7 +22,6 @@ export const createOrUpdateUser=async(id,first_name,last_name,image_url,email_ad
           }
         );
         await user.save();
-        console.log("test",user)
         return user;
 
     } catch (error) {
