@@ -22,6 +22,7 @@ export const createOrUpdateUser=async(id,first_name,last_name,image_url,email_ad
           }
         );
         await user.save();
+        console.log("test",user)
         return user;
 
     } catch (error) {
@@ -30,6 +31,7 @@ export const createOrUpdateUser=async(id,first_name,last_name,image_url,email_ad
 }
 export const deleteUser=async(id)=>{
     try {
+        await connectDB();
         await User.findOneAndDelete({clerkId:id})
     } catch (error) {
         console.log(error)
