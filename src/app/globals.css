@@ -26,6 +26,11 @@
   }
 }
 
+/* Profile Info */
+.input {
+  @apply  bg-dark-1 p-2.5 rounded-lg border-none focus:outline-none mt-3 text-light-1
+}
+
 /* topbar  */
 .search-bar{
   @apply w-full bg-dark-1 px-5 py-3 rounded-lg focus:outline-none text-light-1 text-small-semibold
